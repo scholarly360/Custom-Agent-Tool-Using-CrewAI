@@ -1,0 +1,24 @@
+[project]
+name = "mna_researcher"
+version = "0.1.0"
+description = "mna-researcher using crewAI"
+authors = [{ name = "Yogendra", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.95.0,<1.0.0",
+    "pysqlite3-binary",
+    "microsoft-bing-newssearch"
+]
+[project.scripts]
+mna_researcher = "mna_researcher.main:run"
+run_crew = "mna_researcher.main:run"
+train = "mna_researcher.main:train"
+replay = "mna_researcher.main:replay"
+test = "mna_researcher.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
